@@ -7,7 +7,7 @@ var markers = []
 
 function _registerServiceWorker() {
   if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('js/sw.js').then(() => {
+    navigator.serviceWorker.register('sw.js').then(() => {
       console.log('register succeed')
     }).catch((err) => {
       console.log('register failed')
@@ -178,6 +178,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.setAttribute('alt', 'restaurant img');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
